@@ -1,0 +1,68 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# protect against humans scans
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} http\:\/\/www\.google\.com\/humans\.txt\? [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# deny POST request using HTTP 0.9 / 1.0
+<IfModule mod_rewrite.c>
+RewriteCond %{THE_REQUEST} ^POST(.*)HTTP/(0\.9|1\.0)$ [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# protect xmlrpc against pingback vulnerability
+<Files xmlrpc.php>
+Order Deny,Allow
+Deny from all
+</Files>
+
+
+# protect against humans scans
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} http\:\/\/www\.google\.com\/humans\.txt\? [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# deny POST request using HTTP 0.9 / 1.0
+<IfModule mod_rewrite.c>
+RewriteCond %{THE_REQUEST} ^POST(.*)HTTP/(0\.9|1\.0)$ [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# protect xmlrpc against pingback vulnerability
+<Files xmlrpc.php>
+Order Deny,Allow
+Deny from all
+</Files>
+
+
+# protect against humans scans
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} http\:\/\/www\.google\.com\/humans\.txt\? [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# deny POST request using HTTP 0.9 / 1.0
+<IfModule mod_rewrite.c>
+RewriteCond %{THE_REQUEST} ^POST(.*)HTTP/(0\.9|1\.0)$ [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+# protect xmlrpc against pingback vulnerability
+<Files xmlrpc.php>
+Order Deny,Allow
+Deny from all
+</Files>
